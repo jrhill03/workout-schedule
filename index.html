@@ -21,7 +21,7 @@
     /* Toronto Blue Jays palette: navy + blue + red + white */
     --navy:#1D2D5C;
     --navy-raised:#28396B;
-    --navy-card:#243468;
+    --navy-card:#134A8E;
     --line:#3A4C82;
     --blue:#134A8E;
     --blue-dim:#1A3B6B;
@@ -69,7 +69,7 @@
     font-size:28px;
     margin:0;
     line-height:1.05;
-    color:#000000;
+    color:var(--white);
   }
   .day-badge{
     font-family:'Open Sans',sans-serif;
@@ -147,13 +147,13 @@
     user-select:none;
     transition:border-color .15s;
   }
-  .warmup-item.done{border-color:var(--blue);}
+  .warmup-item.done{border-color:var(--red);}
   .warmup-check{
     flex-shrink:0;
     width:22px;
     height:22px;
     border-radius:50%;
-    border:2px solid var(--line);
+    border:2px solid rgba(255,255,255,0.4);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -163,8 +163,8 @@
     transition:background .15s, border-color .15s;
   }
   .warmup-item.done .warmup-check{
-    background:var(--blue);
-    border-color:var(--blue);
+    background:var(--red);
+    border-color:var(--red);
     color:var(--white);
   }
   .warmup-text{
@@ -203,8 +203,8 @@
   .ex-scheme{
     font-family:'JetBrains Mono',monospace;
     font-size:12px;
-    color:var(--blue);
-    filter:brightness(1.6);
+    color:var(--white);
+    opacity:0.85;
     margin-top:3px;
   }
   .ex-muscles{
@@ -539,7 +539,6 @@ function render(){
   app.innerHTML = `
     <header>
       <div>
-        <p class="eyebrow">Full Body · Fat Loss / Tone</p>
         <h1>Today's Session</h1>
       </div>
       <div class="day-badge">${DAYS[state.day].label}</div>
